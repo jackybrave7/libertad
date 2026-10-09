@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LIBERTAD">
+<link rel="manifest" href="/manifest.json">
+<title>LIBERTAD</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { width: 100%; height: 100%; background: #000; overflow: hidden; font-family: -apple-system, sans-serif; }
+
+  #setup {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: #000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px; z-index: 20; padding: 40px;
+  }
+  #setup.done { display: none; }
+
+  .setup-label { color: rgba(255,255,255,0.35); font-size: 12px; letter-spacing: 0.1em; margin-bottom: 4px; }
+
+  .row { width: 100%; display: flex; align-items: center; gap: 16px; }
+  .row-num { color: rgba(255,255,255,0.6); font-size: 24px; width: 24px; flex-shrink: 0; text-align: center; }
+
+  input[type=file] {
+    flex: 1; height: 56px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px; padding: 0 16px;
+  }
+
+  #start-btn {
+    margin-top: 8px; width: 100%; height: 60px;
+    background: #fff; border: none; border-radius: 12px;
+    color: #000; font-size: 18px; font-weight: 500; cursor: pointer;
+  }
+
+  #controls {
+    position: fixed; bottom: 0; left: 0; right: 0; height: 15%;
+    background: #000; border-top: 1px solid rgba(255,255,255,0.08);
+    display: none; z-index: 10;
+  }
+  #controls.visible { display: flex; }
+  #controls.hidden { opacity: 0; pointer-events: none; }
+
+  .btn {
+    flex: 1; background: transparent; border: none;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45); font-size: 36px; font-weight: 300;
+    cursor: pointer; -webkit-user-select: none; user-select: none; position: relative;
+  }
+  .btn:last-child { border-right: none; }
+  .btn:active { background: rgba(255,255,255,0.1); }
+  .btn.active { color: #fff; }
+  .btn.active::after {
+    content: ''; position: absolute; bottom: 6px; left: 30%; right: 30%;
+    height: 3px; background: #fff; border-radius: 2px;
+  }
+
+  video {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: contain; background: #000; display: none; z-index: 5;
+  }
+  video.active { display: block; }
+</style>
+</head>
+<body>
+
+<div id="setup">
+  <div class="setup-label">ВЫБЕРИ ВИДЕО</div>
+  <div class="row">
+    <span class="row-num">1</span>
+    <input type="file" id="file1" accept="video/*">
+  </div>
+  <div class="row">
+    <span class="row-num">2</span>
+    <input type="file" id="file2" accept="video/*">
+  </div>
+  <div class="row">
+    <span class="row-num">3</span>
+    <input type="file" id="file3" accept="video/*">
+  </div>
+  <button id="start-btn" id="start-btn">Начать</button>
+</div>
+
+<video id="v1" playsinline preload="auto" loop></video>
+<video id="v2" playsinline preload="auto" loop></video>
+<video id="v3" playsinline preload="auto" loop></video>
+
+<div id="controls">
+  <button class="btn" id="btn1">1</button>
+  <button class="btn" id="btn2">2</button>
+  <button class="btn" id="btn3">3</button>
+</div>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+
+  var current = null;
+  var videos = [null, document.getElementById('v1'), document.getElementById('v2'), document.getElementById('v3')];
+  var btns = [null, document.getElementById('btn1'), document.getElementById('btn2'), document.getElementById('btn3')];
+  var controls = document.getElementById('controls');
+
+  document.getElementById('start-btn').addEventListener('touchend', function(e) {
+    e.preventDefault();
+    var f1 = document.getElementById('file1').files[0];
+    var f2 = document.getElementById('file2').files[0];
+    var f3 = document.getElementById('file3').files[0];
+    if (f1) videos[1].src = URL.createObjectURL(f1);
+    if (f2) videos[2].src = URL.createObjectURL(f2);
+    if (f3) videos[3].src = URL.createObjectURL(f3);
+    document.getElementById('setup').classList.add('done');
+    controls.classList.add('visible');
+  });
+
+  [1,2,3].forEach(function(n) {
+    btns[n].addEventListener('touchend', function(e) {
+      e.preventDefault();
+      play(n);
+    });
+  });
+
+  function play(n) {
+    if (current !== null) {
+      videos[current].pause();
+      videos[current].classList.remove('active');
+      btns[current].classList.remove('active');
+    }
+    current = n;
+    videos[n].classList.add('active');
+    btns[n].classList.add('active');
+    videos[n].currentTime = 0;
+    videos[n].play();
+    controls.classList.add('hidden');
+  }
+
+  function returnToControls() {
+    if (current !== null) {
+      videos[current].pause();
+      videos[current].classList.remove('active');
+      btns[current].classList.remove('active');
+      current = null;
+    }
+    controls.classList.remove('hidden');
+  }
+
+  var lastTap = 0;
+  document.addEventListener('touchend', function(e) {
+    if (current !== null && !controls.contains(e.target)) {
+      e.preventDefault();
+      var now = Date.now();
+      if (now - lastTap < 350) { returnToControls(); lastTap = 0; } else { lastTap = now; }
+    }
+  });
+</script>
+</body>
+</html>
