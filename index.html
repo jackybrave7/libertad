@@ -38,6 +38,7 @@
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="/" class="text-sm font-medium tracking-widest uppercase transition-all hover:text-primary text-primary border-b border-primary pb-1">О театре</a>
+                <a href="#spektakli" class="text-sm font-medium tracking-widest uppercase transition-all hover:text-primary text-foreground/80">Спектакли</a>
                 <a href="stone-heart.html" class="text-sm font-medium tracking-widest uppercase transition-all hover:text-primary text-foreground/80">Каменное сердце</a>
                 <a href="rusalochka.html" class="text-sm font-medium tracking-widest uppercase transition-all hover:text-primary text-foreground/80">Русалочка</a>
                 <a href="kometa.html" class="text-sm font-medium tracking-widest uppercase transition-all hover:text-primary text-foreground/80">Комета</a>
@@ -53,6 +54,7 @@
         <!-- Mobile Nav -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-6 animate-in slide-in-from-top-5">
             <a href="/" class="text-lg font-medium tracking-widest uppercase text-center text-primary">О театре</a>
+            <a href="#spektakli" class="text-lg font-medium tracking-widest uppercase text-center text-foreground">Спектакли</a>
             <a href="stone-heart.html" class="text-lg font-medium tracking-widest uppercase text-center text-foreground">Каменное сердце</a>
             <a href="rusalochka.html" class="text-lg font-medium tracking-widest uppercase text-center text-foreground">Русалочка</a>
             <a href="kometa.html" class="text-lg font-medium tracking-widest uppercase text-center text-foreground">Комета</a>
@@ -95,14 +97,58 @@
                         <img src="images/kometa-illustration.jpg" alt="Иллюстрация к спектаклю «Комета»: девушка в белом платье на фоне ночного города" loading="lazy" class="w-full border border-white/10">
                     </a>
                     <div class="space-y-6">
-                        <p class="text-primary text-sm tracking-widest uppercase">Афиша</p>
+                        <p class="text-primary text-sm tracking-widest uppercase">Афиша · ближайший показ</p>
                         <h2 class="font-display text-3xl sm:text-4xl text-white">«Комета»</h2>
-                        <p class="text-muted-foreground leading-relaxed text-base sm:text-lg">Экспериментальная драмеди, 16+. К Земле приближается комета. И, как назло, именно сейчас.</p>
                         <p class="text-white text-base sm:text-lg"><b>31 октября 2026, 19:00</b> — показ первой части с обсуждением со зрителями.<br><span class="text-muted-foreground">Библиотека № 90 им. Неверова, м. Выхино, ул. Молдагуловой, 3Б</span><br><span class="text-muted-foreground">Вход свободный по регистрации.</span></p>
                         <div class="flex flex-wrap gap-4 pt-2">
                             <a href="https://forms.yandex.ru/u/6ac955581f1eb5d17cc2af97/" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 tracking-widest uppercase text-sm rounded-none transition-all">Регистрация</a>
                             <a href="kometa.html" class="inline-flex items-center justify-center border border-primary text-primary hover:bg-primary hover:text-black px-8 py-4 tracking-widest uppercase text-sm rounded-none transition">О спектакле</a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Репертуар -->
+            <section id="spektakli" class="py-24 bg-secondary/5 border-y border-white/5">
+                <div class="container px-4">
+                    <h2 class="font-display text-3xl sm:text-4xl text-white mb-12 text-center">Спектакли</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="/kometa.html" class="group flex flex-col h-full bg-black/40 border border-white/10 hover:border-primary transition-colors overflow-hidden">
+                        <div class="overflow-hidden" style="aspect-ratio: 4 / 3;">
+                            <img src="images/kometa-illustration.jpg" alt="Иллюстрация к спектаклю «Комета»: девушка в белом платье на фоне ночного города" loading="lazy" class="w-full h-full object-cover" style="transition: transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''">
+                        </div>
+                        <div class="flex flex-col flex-1 p-6 gap-4">
+                            <span class="text-primary text-xs tracking-widest uppercase">Ближайший показ · 31 октября, 19:00</span>
+                            <h3 class="font-display text-2xl sm:text-3xl text-white">«Комета»</h3>
+                            <p class="text-white/80 text-sm">Экспериментальная драмеди · 16+</p>
+                            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">К Земле приближается комета. И, как назло, именно сейчас.</p>
+                            <span class="mt-auto pt-2 text-primary text-sm tracking-widest uppercase">Подробнее и регистрация →</span>
+                        </div>
+                    </a>
+                    <a href="stone-heart.html" class="group flex flex-col h-full bg-black/40 border border-white/10 hover:border-primary transition-colors overflow-hidden">
+                        <div class="overflow-hidden" style="aspect-ratio: 4 / 3;">
+                            <img src="images/hero-forest.jpg" alt="Сказочный лес — спектакль «Каменное сердце»" loading="lazy" class="w-full h-full object-cover" style="transition: transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''">
+                        </div>
+                        <div class="flex flex-col flex-1 p-6 gap-4">
+                            <span class="text-primary text-xs tracking-widest uppercase">В производстве</span>
+                            <h3 class="font-display text-2xl sm:text-3xl text-white">«Каменное сердце»</h3>
+                            <p class="text-white/80 text-sm">По мотивам сказки Вильгельма Гауфа</p>
+                            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">Мистическая драма с живым видеомэппингом.</p>
+                            <span class="mt-auto pt-2 text-primary text-sm tracking-widest uppercase">О спектакле →</span>
+                        </div>
+                    </a>
+                    <a href="rusalochka.html" class="group flex flex-col h-full bg-black/40 border border-white/10 hover:border-primary transition-colors overflow-hidden">
+                        <div class="overflow-hidden" style="aspect-ratio: 4 / 3;">
+                            <img src="images/rusalochka-rehearsal.jpg" alt="Репетиция спектакля «Русалочка» — театр LIBERTAD" loading="lazy" class="w-full h-full object-cover" style="transition: transform .6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform=''">
+                        </div>
+                        <div class="flex flex-col flex-1 p-6 gap-4">
+                            <span class="text-primary text-xs tracking-widest uppercase">В производстве</span>
+                            <h3 class="font-display text-2xl sm:text-3xl text-white">«Русалочка»</h3>
+                            <p class="text-white/80 text-sm">По мотивам сказки Ганса Христиана Андерсена</p>
+                            <p class="text-muted-foreground leading-relaxed text-sm sm:text-base">Иммерсивный спектакль, в котором история рассказывается через звук, прикосновение и ветер.</p>
+                            <span class="mt-auto pt-2 text-primary text-sm tracking-widest uppercase">О спектакле →</span>
+                        </div>
+                    </a>
                     </div>
                 </div>
             </section>
