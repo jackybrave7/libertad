@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isWaitlist) {
             set('hero-btn-text', 'Лист ожидания');
-            set('tickets-heading', 'Билеты раскуплены');
+            set('tickets-heading', 'Лист ожидания');
             set('tickets-btn-text', 'Лист ожидания');
-            set('tickets-desc', 'Все билеты на этот показ уже куплены. Оставьте свои контакты — мы свяжемся с вами, если появятся свободные места или откроется новый показ.');
+            set('tickets-desc', 'Премьера состоялась в мае 2026. Запишитесь в лист ожидания — сообщим о новых показах.');
             set('tickets-bottom', 'Спасибо за интерес к спектаклю!');
             show('tickets-btn-icon-waitlist');
             hide('tickets-btn-icon-sale');
