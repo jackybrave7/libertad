@@ -35,6 +35,9 @@
   }
 
   ::selection { background: var(--primary); color: var(--primary-fg); }
+  /* Согласие на обработку ПДн в форме листа ожидания */
+  .consent-field { display:flex; gap:10px; align-items:flex-start; text-align:left; font-size:12px; line-height:1.6; color: var(--muted-fg); cursor:pointer; }
+  .consent-field input { margin-top:3px; width:16px; height:16px; flex-shrink:0; accent-color: var(--primary); }
 
   body {
     position: relative;
@@ -577,6 +580,10 @@
             <label for="waitlist-phone">Телефон</label>
             <input type="tel" id="waitlist-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__">
           </div>
+          <label class="consent-field">
+            <input type="checkbox" id="waitlist-consent" name="consent" required>
+            <span>Я даю согласие на <a href="consent.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a> и принимаю <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">политику конфиденциальности</a></span>
+          </label>
           <button type="submit" class="waitlist-submit" id="waitlist-submit">Записаться</button>
         </form>
       </div>

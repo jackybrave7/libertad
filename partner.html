@@ -246,6 +246,10 @@
                                     <label class="text-sm text-muted-foreground">Комментарий</label>
                                     <textarea name="message" rows="4" class="w-full bg-black/40 border border-white/10 rounded px-4 py-3 focus:outline-none focus:border-primary" placeholder="Цели партнёрства, интересующие форматы, сроки"></textarea>
                                 </div>
+                                <label class="flex items-start gap-3 text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                                    <input type="checkbox" id="partner-consent" name="consent" required style="margin-top:2px;accent-color:#fbbf24;width:16px;height:16px;flex-shrink:0">
+                                    <span>Я даю согласие на <a href="consent.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">обработку персональных данных</a> и принимаю <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">политику конфиденциальности</a></span>
+                                </label>
                                 <button type="submit" class="w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-4 text-sm font-semibold tracking-widest uppercase rounded-none transition-all shadow-[0_0_30px_rgba(251,191,36,0.3)] hover:shadow-[0_0_50px_rgba(251,191,36,0.5)]" id="partner-submit">Отправить</button>
                                 <p id="partner-success" class="hidden text-sm text-primary">Спасибо! Мы свяжемся с вами.</p>
                                 <p id="partner-error" class="hidden text-sm text-red-400">Не удалось отправить. Попробуйте позже.</p>
