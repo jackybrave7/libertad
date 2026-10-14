@@ -24,6 +24,14 @@
         ym(106072724, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
     </script>
     <!-- /Yandex.Metrika counter -->
+    <style>
+        /* Мобильная: команда и актёры в 2 колонки (перекрывает css/style-fixes.css) */
+        @media (max-width: 480px) {
+            .team-grid-fixed.team-grid-fixed,
+            .actors-grid-fixed.actors-grid-fixed { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 1rem !important; }
+            .team-grid-fixed .text-2xl, .actors-grid-fixed .text-2xl { font-size: 1.1rem; line-height: 1.3; }
+        }
+    </style>
 </head>
 <body class="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
     <noscript><div><img src="https://mc.yandex.ru/watch/106072724" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -93,7 +101,7 @@
             <!-- Afisha: Комета -->
             <section id="afisha" class="py-24 container px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
-                    <a href="kometa.html" class="block w-full max-w-sm mx-auto">
+                    <a href="kometa.html" class="hidden md:block w-full max-w-sm mx-auto">
                         <img src="images/kometa-illustration.jpg" alt="Иллюстрация к спектаклю «Комета»: девушка в белом платье на фоне ночного города" loading="lazy" class="w-full border border-white/10">
                     </a>
                     <div class="space-y-6">
@@ -413,7 +421,7 @@
                             </div>
                             <h3 class="font-display text-2xl text-white">«Алый берег»</h3>
                             <p class="text-muted-foreground text-sm sm:text-base leading-relaxed">Пьеса о сопротивлении в Германии в 1940 году.
-                                Пишется нашим драматургом Тами Айрис на основании этюдов лаборатории 2025 года. Немецкий офицер вклюблен в еврейку из сопротивления. И это только начало.</p> 
+                                Пишется нашим драматургом Тами Айрис на основании этюдов лаборатории 2025 года. Немецкий офицер влюблён в еврейку из сопротивления. И это только начало.</p> 
                             <div class="flex items-center justify-between text-sm text-muted-foreground pt-2">
                                 <div class="flex items-center gap-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M12 21S4 13.5 4 8a4 4 0 0 1 8 0 4 4 0 0 1 8 0c0 5.5-8 13-8 13Z"/></svg>
@@ -556,7 +564,7 @@
         </div>
 
         <div class="container mt-12 pt-8 border-t border-white/5 text-center text-xs text-muted-foreground">
-            <p>&copy; 2024-2026 Театр-лаборатория LIBERTAD. Все права защищены.</p>
+            <p>&copy; 2024–2026 Театр-лаборатория LIBERTAD. Все права защищены.</p>
         </div>
     </footer>
 
