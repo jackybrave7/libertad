@@ -1,0 +1,44 @@
+name: PR preview (GitHub Pages)
+
+# Превью веток PR на GitHub Pages: https://jackybrave7.github.io/libertad/pr-preview/pr-<номер>/
+# Никогда не деплоит по FTP и не трогает боевой сайт (deploy.yml работает только на push в main).
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+concurrency: preview-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  preview:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build preview copy (rewrite absolute paths for subpath hosting)
+        if: github.event.action != 'closed'
+        run: |
+          mkdir -p _preview
+          rsync -a --exclude '.git' --exclude '.github' --exclude '_preview' \
+            --exclude '*.py' --exclude '*.gs' --exclude '*.md' --exclude '*.ps1' ./ _preview/
+          cd _preview
+          # href="/" -> href="./" ; href="/x" / src="/x" -> относительные пути (страницы лежат в корне)
+          find . -name '*.html' -print0 | xargs -0 sed -i -E \
+            -e 's#(href|src|action)="/"#\1="./"#g' \
+            -e 's#(href|src|action)="/([^/"])#\1="\2#g'
+          # url(/images/...) в CSS из папки css/ -> ../images/...
+          find css -name '*.css' -print0 | xargs -0 sed -i -E "s#url\((['\"]?)/([^/])#url(\1../\2#g"
+          touch .nojekyll
+
+      - name: Deploy / remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./_preview/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
