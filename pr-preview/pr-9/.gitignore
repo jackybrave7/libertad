@@ -1,0 +1,40 @@
+# Claude Code local config
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs / temp
+*.log
+*.tmp
+libertad-tmp.html
+style-main.css
+style-fixes.css
+
+# Secrets / local config
+.env
+.env.*
+*.local
+
+# Deploy
+deploy.config
+deploy.log
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Large media, GitHub limit 100 MB
+play-hearts/video1.mp4
+play-hearts/video2.mp4
+play-hearts/video3.mp4
