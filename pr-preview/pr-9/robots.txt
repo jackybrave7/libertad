@@ -1,6 +1,0 @@
-# Allow all web crawlers to access all content
-User-agent: *
-Allow: /
-Disallow: /thank-you.html
-
-Sitemap: https://libertad-theater.ru/sitemap.xml
