@@ -42,3 +42,4 @@ jobs:
             **/libertad-tmp.html
             **/style-main.css
             **/style-fixes.css
+            game/**
