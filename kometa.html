@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Комета — Театр-лаборатория LIBERTAD</title>
+<meta name="description" content="«Комета» — экспериментальная драмеди театра-лаборатории LIBERTAD. Показ первой части с обсуждением — 31 октября 2026, 19:00, Библиотека № 90 им. Неверова, Москва. 16+">
+<meta property="og:title" content="Комета — Театр-лаборатория LIBERTAD">
+<meta property="og:description" content="К Земле приближается комета. И, как назло, именно сейчас. 31 октября 2026, 19:00.">
+<meta property="og:image" content="https://libertad-theater.ru/images/kometa-illustration.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://libertad-theater.ru/kometa.html">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Театр-лаборатория LIBERTAD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Комета — Театр-лаборатория LIBERTAD">
+<meta name="twitter:description" content="Экспериментальная драмеди. Показ первой части с обсуждением — 31 октября 2026, 19:00, Библиотека № 90 им. Неверова.">
+<meta name="twitter:image" content="https://libertad-theater.ru/images/kometa-illustration.jpg">
+<link rel="canonical" href="https://libertad-theater.ru/kometa.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TheaterEvent",
+  "name": "Комета",
+  "description": "Экспериментальная драмеди театра-лаборатории LIBERTAD. Показ первой части с обсуждением со зрителями. К Земле приближается комета. И, как назло, именно сейчас.",
+  "image": "https://libertad-theater.ru/images/kometa-illustration.jpg",
+  "url": "https://libertad-theater.ru/kometa.html",
+  "startDate": "2026-10-31T19:00:00+03:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "typicalAgeRange": "16+",
+  "inLanguage": "ru",
+  "location": {
+    "@type": "Place",
+    "name": "Библиотека № 90 им. Неверова",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Молдагуловой, 3Б",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    }
+  },
+  "organizer": {
+    "@type": "TheaterGroup",
+    "name": "Театр-лаборатория LIBERTAD",
+    "url": "https://libertad-theater.ru",
+    "email": "yes@libertad-theater.ru"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Евгений Алфёров",
+    "jobTitle": "автор и режиссёр"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://forms.yandex.ru/u/6ac955581f1eb5d17cc2af97/",
+    "price": "0",
+    "priceCurrency": "RUB",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-10-14"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --background: oklch(12% .03 260);
+    --foreground: oklch(92% .01 260);
+    --muted: oklch(20% .03 260);
+    --muted-fg: oklch(65% .02 260);
+    --border: oklch(30% .05 260);
+    --primary: oklch(85% .15 85);
+    --primary-fg: oklch(15% .04 260);
+    --card: oklch(15% .04 260);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection { background: var(--primary); color: var(--primary-fg); }
+
+  body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 24px 80px;
+    background-image:
+      radial-gradient(ellipse at 50% -10%, oklch(25% .08 260 / 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 110%, oklch(22% .1 260 / 0.4) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* лёгкая текстура «инея/тумана» поверх фона — едва видна */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 70% 60%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 40% 80%, #fff 50%, transparent 51%),
+      radial-gradient(1px 1px at 90% 20%, #fff 50%, transparent 51%);
+    background-size: 240px 240px, 320px 320px, 280px 280px, 360px 360px;
+  }
+
+  /* Медленно движущиеся волны — тематика «Русалочки» */
+  .waves {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.55;
+  }
+  .waves svg {
+    position: absolute;
+    bottom: -8%;
+    left: -50%;
+    width: 300%;
+    height: 55%;
+    animation: drift 32s linear infinite;
+  }
+  .waves svg.b {
+    bottom: -16%;
+    opacity: 0.6;
+    animation-duration: 46s;
+    animation-direction: reverse;
+  }
+  .waves svg.c {
+    bottom: 6%;
+    opacity: 0.35;
+    animation-duration: 60s;
+  }
+  @keyframes drift {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(33.333%); }
+  }
+
+  /* Верхний бренд-бар — повторяет логику шапки основного сайта */
+  header.brand-bar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
+  }
+  .brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--muted-fg);
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .brand:hover { color: var(--primary); }
+  .brand b {
+    color: var(--foreground);
+    font-weight: 500;
+    letter-spacing: 0.34em;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .hero-visual {
+    width: min(100vw - 48px, 720px);
+    margin: 4px auto 0;
+  }
+
+  .hero-frame {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid oklch(85% .15 85 / 0.12);
+    box-shadow:
+      0 0 0 1px oklch(15% .04 260),
+      0 48px 96px -48px rgba(0, 0, 0, 0.75),
+      0 0 120px -40px oklch(55% .18 320 / 0.28);
+  }
+
+  .hero-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      oklch(12% .03 260 / 0.25) 0%,
+      transparent 22%,
+      transparent 78%,
+      oklch(12% .03 260 / 0.35) 100%
+    );
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: saturate(1.06) contrast(1.03);
+  }
+
+  .hero-caption {
+    margin-top: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: oklch(52% .02 260);
+    font-weight: 400;
+  }
+
+  .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(60px, 13vw, 124px);
+    line-height: 0.95;
+    letter-spacing: 0.005em;
+    color: var(--foreground);
+  }
+
+  .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(17px, 2.4vw, 21px);
+    color: var(--muted-fg);
+    margin-top: -28px;
+    letter-spacing: 0.02em;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--primary);
+    opacity: 0.6;
+  }
+
+  .lead {
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: oklch(82% .015 260);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    width: 100%;
+    max-width: 620px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted-fg);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .fact .icon {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .premiere {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--foreground);
+    letter-spacing: 0.02em;
+    line-height: 1.55;
+    text-align: center;
+  }
+  .premiere b {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--primary);
+  }
+  .premiere .venue {
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+    color: var(--muted-fg);
+    letter-spacing: 0.04em;
+  }
+  .premiere .venue a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid oklch(30% .05 260);
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .premiere .venue a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 18px 44px;
+    background: var(--primary);
+    color: var(--primary-fg);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 0 0 20px oklch(85% .15 85 / 0.2);
+    transition: box-shadow 0.4s ease, transform 0.4s ease, background 0.4s ease;
+  }
+  .cta:hover {
+    box-shadow: 0 0 40px oklch(85% .15 85 / 0.45);
+    background: oklch(88% .15 85);
+  }
+  .cta:active { transform: translateY(1px); }
+
+  .waitlist-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: oklch(8% .02 260 / 0.88);
+    backdrop-filter: blur(8px);
+  }
+  .waitlist-modal.is-open { display: flex; }
+
+  .waitlist-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 28px 24px 24px;
+    background: oklch(14% .04 260);
+    border: 1px solid oklch(85% .15 85 / 0.18);
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+  }
+
+  .waitlist-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    color: var(--muted-fg);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .waitlist-close:hover { color: var(--primary); }
+
+  .waitlist-head {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .waitlist-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .waitlist-head p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted-fg);
+  }
+
+  .waitlist-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: oklch(75% .02 260);
+  }
+  .waitlist-form .field { margin-bottom: 16px; }
+  .waitlist-form input {
+    width: 100%;
+    padding: 12px 14px;
+    background: oklch(10% .03 260);
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  .waitlist-form input:focus { border-color: oklch(85% .15 85 / 0.55); }
+  .waitlist-form input::placeholder { color: oklch(45% .02 260); }
+
+  .waitlist-submit {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 20px;
+    background: var(--primary);
+    color: var(--primary-fg);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .waitlist-submit:hover {
+    background: oklch(88% .15 85);
+    box-shadow: 0 0 24px oklch(85% .15 85 / 0.25);
+  }
+  .waitlist-submit:disabled { opacity: 0.6; cursor: wait; }
+
+  .waitlist-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background: oklch(10% .03 260 / 0.82);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--foreground);
+  }
+  .waitlist-overlay.is-visible { display: flex; }
+
+  .waitlist-success {
+    display: none;
+    text-align: center;
+    padding: 12px 0 4px;
+  }
+  .waitlist-success.is-visible { display: block; }
+  .waitlist-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  .waitlist-success p {
+    font-size: 13px;
+    color: var(--muted-fg);
+    line-height: 1.6;
+  }
+
+  .waitlist-body { position: relative; }
+
+  footer.foot {
+    position: relative;
+    z-index: 2;
+    margin-top: 80px;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: oklch(50% .02 260);
+    text-align: center;
+  }
+  footer.foot a {
+    color: var(--muted-fg);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer.foot a:hover { color: var(--primary); }
+
+  @media (max-width: 560px) {
+    body { padding: 36px 20px 56px; }
+    header.brand-bar { padding-bottom: 48px; }
+    main { gap: 32px; }
+    .subtitle { margin-top: -14px; }
+    .hero-visual { width: 100%; }
+    .hero-caption { letter-spacing: 0.28em; }
+    .facts {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 16px;
+      max-width: 360px;
+      padding: 28px 0;
+    }
+    .lead { font-size: 14.5px; }
+    .cta { padding: 16px 32px; font-size: 11px; letter-spacing: 0.24em; }
+    footer.foot { margin-top: 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .waves svg { animation: none; }
+  }
+  /* «Комета»: звёздное небо и пролетающая комета вместо волн */
+  .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .sky .comet {
+    position: absolute; top: 12%; left: -20%;
+    width: 220px; height: 2px;
+    background: linear-gradient(90deg, transparent, oklch(85% .15 85 / 0.0) 10%, oklch(92% .08 85 / 0.9));
+    border-radius: 2px;
+    transform: rotate(18deg);
+    filter: drop-shadow(0 0 6px oklch(85% .15 85 / 0.8));
+    animation: fly 14s linear infinite;
+  }
+  .sky .comet::after {
+    content: ""; position: absolute; right: -3px; top: -3px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: oklch(97% .05 85); box-shadow: 0 0 14px 4px oklch(85% .15 85 / 0.7);
+  }
+  @keyframes fly {
+    0% { transform: translate(0, 0) rotate(18deg); opacity: 0; }
+    8% { opacity: 1; }
+    40% { transform: translate(140vw, 46vw) rotate(18deg); opacity: 0; }
+    100% { transform: translate(140vw, 46vw) rotate(18deg); opacity: 0; }
+  }
+  .hero-visual.poster { width: min(100vw - 48px, 520px); }
+  .hero-visual.poster .hero-photo { aspect-ratio: auto; height: auto !important; max-height: none !important; object-fit: contain; }
+  @media (max-width: 560px) { .hero-visual.poster { width: 100%; max-width: 440px; } }
+  .story { max-width: 600px; text-align: left; display: flex; flex-direction: column; gap: 16px; }
+  .story p { font-size: 15px; line-height: 1.85; color: var(--muted-fg); }
+  .story b { color: var(--foreground); font-weight: 500; }
+  .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(22px, 4vw, 30px); line-height: 1.35; color: var(--foreground); }
+  .event-note { font-size: 12px; letter-spacing: 0.08em; color: var(--muted-fg); line-height: 1.8; }
+  .event-note a { color: var(--primary); text-decoration: none; }
+  a.cta { display: inline-block; text-decoration: none; }
+  @media (prefers-reduced-motion: reduce) { .sky .comet { animation: none; display: none; } }
+</style>
+</head>
+<body>
+
+<div class="sky" aria-hidden="true"><span class="comet"></span></div>
+
+<header class="brand-bar">
+  <a class="brand" href="https://libertad-theater.ru">Театр-лаборатория&nbsp;<b>LIBERTAD</b></a>
+</header>
+
+<main>
+  <h1 class="title">Комета</h1>
+  <div class="subtitle">Экспериментальная драмеди · 16+</div>
+
+  <p class="tagline">«К Земле приближается комета.<br>И, как назло, именно сейчас»</p>
+
+  <div class="hero-visual poster">
+    <div class="hero-frame">
+      <img class="hero-photo" src="images/kometa-illustration.jpg" width="900" height="1124"
+        alt="Иллюстрация к спектаклю «Комета»: девушка в белом платье смотрит на ночной город и огромное оранжевое светило">
+    </div>
+    <p class="hero-caption">Автор и режиссёр — Евгений Алфёров</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="story">
+    <p>
+      Встреча в метро, которая всё переворачивает. Сложные отношения <b>Игоря</b>, <b>Лены</b> и <b>Густава</b>
+      разворачиваются на фоне приближения кометы.
+    </p>
+    <p>
+      Новая работа театра-лаборатории LIBERTAD. Мы покажем первую часть спектакля и хотим услышать вас: после показа — обсуждение со зрителями.
+    </p>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><span class="icon">☄️</span><span>Драмеди</span></div>
+    <div class="fact"><span class="icon">🧪</span><span>Экспери-<br>мент</span></div>
+    <div class="fact"><span class="icon">💬</span><span>Обсуждение<br>со зрителями</span></div>
+    <div class="fact"><span class="icon">🔞</span><span>16+</span></div>
+  </div>
+
+  <div class="premiere">
+    Показ первой части — <b>31 октября 2026, 19:00</b>
+    <span class="venue"><a href="https://t.me/biblioteka90v" target="_blank" rel="noopener">Библиотека № 90 им. Неверова</a>, м.&nbsp;Выхино, ул.&nbsp;Молдагуловой, 3Б</span>
+  </div>
+
+  <a class="cta" href="https://forms.yandex.ru/u/6ac955581f1eb5d17cc2af97/" target="_blank" rel="noopener">Зарегистрироваться</a>
+
+  <p class="event-note">
+    Вход свободный по регистрации.<br>
+    Вопросы — в Telegram: <a href="https://t.me/evgalf" target="_blank" rel="noopener">@evgalf</a>
+  </p>
+</main>
+
+<footer class="foot">
+  <a href="index.html">libertad-theater.ru</a>
+</footer>
+
+</body>
+</html>
