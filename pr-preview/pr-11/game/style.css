@@ -1,0 +1,1267 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --primary: #7c3aed;
+  --primary-light: #a855f7;
+  --primary-foreground: #ffffff;
+  --secondary: #e879a0;
+  --secondary-light: #f9a8d4;
+  --secondary-foreground: #ffffff;
+  --accent: #f59e0b;
+  --accent-light: #fcd34d;
+  --accent-foreground: #1a0a00;
+  --background: #1a0a2e;
+  --bg-mid: #2d1054;
+  --card: #2a0f4a;
+  --card-light: #3d1a6e;
+  --card-foreground: #f0e6ff;
+  --text-muted: #d4b8f0;
+  --border: rgba(168, 85, 247, 0.5);
+  --border-bright: #a855f7;
+  --gold: #f59e0b;
+  --gold-light: #fcd34d;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --radius-lg: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', 'Arial', sans-serif;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(232, 121, 160, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(45, 16, 84, 0.8) 0%, transparent 80%);
+  color: var(--card-foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  padding-bottom: 76px;
+  position: relative;
+  overflow-x: hidden;
+  font-size: 18px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 30% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,0.3) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 { font-size: 3.2rem; text-shadow: 0 0 24px rgba(245, 158, 11, 0.65), 0 2px 6px rgba(0,0,0,0.6); line-height: 1.15; }
+h2 { font-size: 2.4rem; text-shadow: 0 0 18px rgba(245, 158, 11, 0.45); line-height: 1.2; }
+h3 { font-size: 1.7rem; }
+
+p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--card-foreground);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid var(--border);
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  box-shadow: 0 0 15px rgba(232, 121, 160, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: #f472b6;
+  box-shadow: 0 0 25px rgba(232, 121, 160, 0.7);
+  transform: scale(1.05);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--border-bright);
+  color: var(--primary-light);
+}
+
+.btn-outline:hover {
+  background-color: rgba(124, 58, 237, 0.15);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(135deg, var(--card) 0%, var(--card-light) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(168, 85, 247, 0.1);
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Game Screens */
+.screen {
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.screen.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Welcome Screen */
+.welcome-content {
+  max-width: 860px;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(42, 15, 74, 0.97) 0%, rgba(61, 26, 110, 0.93) 100%);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(168, 85, 247, 0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.75;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-card {
+  background: linear-gradient(135deg, rgba(61, 26, 110, 0.8) 0%, rgba(42, 15, 74, 0.9) 100%);
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: var(--secondary-light);
+}
+
+.reward-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(232, 121, 160, 0.2));
+  border-radius: var(--radius);
+  color: var(--gold-light);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.btn-lg {
+  font-size: 1.5rem;
+  padding: 1.1rem 3.2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.55), 0 0 0 1px rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+.btn-lg:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.7), 0 0 30px rgba(232, 121, 160, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Memory Game */
+.memory-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.moves-display {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(61, 26, 110, 0.9), rgba(42, 15, 74, 0.9));
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: var(--radius);
+  padding: 0.65rem 2rem;
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.memory-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-front, .memory-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-card-front {
+  background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 50%, var(--secondary) 100%);
+  color: var(--primary-foreground);
+  font-size: 1.8rem;
+}
+
+.memory-card-front::after {
+  content: '✦';
+  font-size: 2rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.memory-card-back {
+  background-color: var(--card);
+  transform: rotateY(180deg);
+  position: relative;
+}
+
+.memory-card-back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(0deg, rgba(10,3,20,0.92) 0%, transparent 100%);
+  z-index: 1;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.memory-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.memory-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.2rem 4px 0.35rem;
+  background: linear-gradient(0deg, rgba(10,3,20,0.95) 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  z-index: 2;
+}
+
+.memory-card-label-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+  line-height: 1.2;
+}
+
+.memory-card-label-story {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: rgba(232, 121, 160, 0.95);
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  line-height: 1.1;
+}
+
+.match-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(232, 121, 160, 0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: var(--radius-sm);
+}
+
+.memory-card.matched .match-overlay {
+  opacity: 1;
+}
+
+/* Quiz Screen (Tournament) */
+.progress-container {
+  width: 100%;
+  max-width: 640px;
+  height: 8px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+.quiz-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: var(--gold-light);
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+
+.duel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.duel-container.fade-out {
+  opacity: 0;
+}
+
+.fade-out-card {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.character-card {
+  position: relative;
+  width: min(38vw, 380px);
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, var(--card) 0%, var(--card-light) 100%);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(168, 85, 247, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  flex-shrink: 0;
+}
+
+.character-card:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.5);
+  border-color: var(--secondary);
+  z-index: 10;
+}
+
+.card-img-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.character-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s;
+  display: block;
+}
+
+.character-card:hover img {
+  transform: scale(1.08);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1rem 0.9rem;
+  background: linear-gradient(0deg, rgba(10, 3, 20, 0.97) 0%, rgba(26, 10, 46, 0.7) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  z-index: 2;
+}
+
+.card-label-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.card-label-story {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(232, 121, 160, 0.95);
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+  letter-spacing: 0.3px;
+}
+
+.vs-badge {
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #1a0a00;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.65), 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 5;
+  flex-shrink: 0;
+  align-self: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Nunito', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .duel-container {
+    gap: 0.5rem;
+  }
+
+  .character-card {
+    width: min(44vw, 280px);
+  }
+
+  .vs-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+}
+
+/* Quiz Result */
+.quiz-result-card {
+  background: linear-gradient(160deg, var(--card) 0%, var(--card-light) 100%);
+  padding: 3.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(168, 85, 247, 0.3);
+  text-align: center;
+  max-width: 640px;
+  animation: slideUp 0.6s ease-out;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.winner-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2rem auto;
+  border: 5px solid var(--gold);
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.55), 0 0 70px rgba(124, 58, 237, 0.3);
+}
+
+.winner-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.winner-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.winner-desc {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chest Game */
+#chest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chest-item {
+  width: 220px;
+  height: 220px;
+  background: linear-gradient(135deg, var(--card) 0%, var(--card-light) 100%);
+  border-radius: 50%;
+  border: 3px solid rgba(168, 85, 247, 0.6);
+  padding: 12px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px rgba(124, 58, 237, 0.4), 0 0 70px rgba(232, 121, 160, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  overflow: hidden;
+}
+
+.chest-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.chest-item-emoji {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.7));
+}
+
+.chest-hint {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+}
+
+.draggable-item {
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+}
+
+.draggable-item:active {
+  cursor: grabbing;
+}
+
+.draggable-item.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.8);
+}
+
+.drop-target {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.drop-target.drag-over {
+  transform: scale(1.06) translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.6), 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 820px;
+}
+
+.option-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+  aspect-ratio: 3/4;
+  background: linear-gradient(160deg, var(--card) 0%, var(--card-light) 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(168, 85, 247, 0.2);
+}
+
+.option-card:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.4);
+  border-color: var(--primary-light);
+}
+
+.option-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.option-card .name-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(26, 10, 46, 0.97) 0%, rgba(42, 15, 74, 0.0) 100%);
+  color: var(--gold-light);
+  padding: 1.5rem 0.75rem 0.7rem;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.option-char-name {
+  font-weight: 700;
+  font-size: clamp(0.7rem, 2.5vw, 1.2rem);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.option-char-story {
+  font-size: clamp(0.6rem, 2vw, 0.85rem);
+  font-style: italic;
+  color: rgba(232, 121, 160, 0.9);
+  line-height: 1.1;
+}
+
+.option-card.correct {
+  border-color: #86efac;
+  box-shadow: 0 0 30px rgba(134, 239, 172, 0.5);
+}
+
+.option-card.wrong {
+  border-color: #fca5a5;
+  box-shadow: 0 0 20px rgba(252, 165, 165, 0.3);
+}
+
+.result-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.option-card.correct .result-overlay,
+.option-card.wrong .result-overlay {
+  opacity: 1;
+}
+
+.result-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.correct .result-icon { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.wrong .result-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+/* Final Screen */
+.winner-card {
+  background: linear-gradient(160deg, var(--card) 0%, var(--card-light) 100%);
+  padding: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+.winner-image-container {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-bottom: 3px solid var(--gold);
+}
+
+.winner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s;
+}
+
+.winner-card:hover .winner-image {
+  transform: scale(1.05);
+}
+
+.winner-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--gold-light);
+  margin: 1.25rem 0 0.6rem;
+  padding: 0 1.25rem;
+}
+
+.winner-tagline {
+  font-style: italic;
+  color: var(--secondary-light);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.winner-details {
+  padding: 0 1.75rem 1.75rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.final-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  color: var(--gold-light);
+  margin-bottom: 0.6rem;
+  line-height: 1.1;
+  text-shadow: 0 0 24px rgba(245, 158, 11, 0.55);
+}
+
+.final-subtitle {
+  font-size: 1.55rem;
+  color: var(--secondary-light);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+}
+
+.final-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+.promo-scroll {
+  background: linear-gradient(160deg, rgba(42, 15, 74, 0.97) 0%, rgba(61, 26, 110, 0.93) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.55);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.45), 0 0 35px rgba(245, 158, 11, 0.18);
+  margin-bottom: 2rem;
+  text-align: center !important;
+  max-width: 520px;
+  width: 100%;
+}
+
+.promo-scroll h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.promo-scroll p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  text-align: center !important;
+}
+
+.promo-code {
+  font-family: 'Nunito', monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  border: 2px solid rgba(245, 158, 11, 0.65);
+  padding: 1rem 2.5rem;
+  margin: 1.5rem 0;
+  background: rgba(245, 158, 11, 0.12);
+  display: inline-block;
+  border-radius: var(--radius);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+  letter-spacing: 4px;
+}
+
+.promo-hint {
+  font-size: 1rem;
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.link-gold {
+  color: #fcd34d;
+  text-decoration: underline;
+}
+
+.promo-discount-label {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin: 0.25rem 0 0.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.promo-deadline {
+  font-size: 1rem;
+  color: #f87171;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Приглашение от театра */
+.theater-invite {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  max-width: 520px;
+  width: 100%;
+}
+
+.theater-invite-text {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+.theater-invite-text strong {
+  color: var(--text);
+}
+
+/* Блок отправки родителям */
+.share-parent-block {
+  max-width: 520px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.share-parent-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.share-parent-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.share-parent-hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  opacity: 0.75;
+  margin: 0 !important;
+}
+
+.btn-telegram {
+  background: linear-gradient(135deg, #2AABEE 0%, #1a8ccc 100%);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 18px rgba(42, 171, 238, 0.4);
+  min-width: 160px;
+  justify-content: center;
+}
+
+.btn-telegram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(42, 171, 238, 0.55);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #1aab55 100%);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  min-width: 160px;
+  justify-content: center;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+}
+
+.share-icon {
+  font-size: 1.2rem;
+}
+
+/* Hidden Settings */
+#settings-panel {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: var(--card);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 9999;
+  font-size: 12px;
+  opacity: 0.1;
+  transition: opacity 0.3s;
+  color: var(--card-foreground);
+}
+
+#settings-panel:hover {
+  opacity: 1;
+}
+
+.settings-group {
+  margin-bottom: 0.5rem;
+}
+
+.settings-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.settings-group input {
+  width: 100%;
+  padding: 0.25rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 5, 20, 0.82);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: linear-gradient(160deg, var(--card) 0%, var(--card-light) 100%);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(124, 58, 237, 0.3);
+  text-align: center;
+  max-width: 460px;
+  width: 92%;
+  animation: scaleIn 0.3s;
+}
+
+.modal-content h2 {
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+}
+
+.modal-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* New Final Screen Layout */
+.final-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .final-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .final-card-section {
+    flex: 1;
+    max-width: 420px;
+  }
+
+  .final-reward-section {
+    flex: 1;
+    max-width: 520px;
+    text-align: left;
+    padding-top: 2rem;
+  }
+
+  .final-reward-section h1,
+  .final-reward-section p {
+    text-align: left;
+  }
+
+  .final-reward-section .promo-scroll {
+    margin-left: 0;
+  }
+}
+
+/* Footer */
+.game-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(0deg, rgba(26, 10, 46, 0.99) 0%, rgba(42, 15, 74, 0.97) 100%);
+  border-top: 1px solid rgba(168, 85, 247, 0.45);
+  z-index: 1000;
+  box-shadow: 0 -4px 24px rgba(124, 58, 237, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.game-footer a {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  transition: color 0.3s, text-shadow 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1.5px;
+}
+
+.game-footer a:hover {
+  color: var(--secondary-light);
+  text-shadow: 0 0 12px rgba(232, 121, 160, 0.7);
+}
+
+.final-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Decorative theater curtain top border */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--gold), var(--secondary), var(--primary));
+  z-index: 9999;
+}
+
+/* Site Footer */
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  margin-top: 3rem;
+  opacity: 0.75;
+}
+
+.site-footer a {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.site-footer a:hover {
+  color: var(--secondary-light);
+  text-shadow: 0 0 10px rgba(232, 121, 160, 0.6);
+}
+
+.link-gold {
+  color: #fcd34d;
+  text-decoration: underline;
+}

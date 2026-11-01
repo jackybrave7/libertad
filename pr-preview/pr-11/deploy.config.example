@@ -1,0 +1,18 @@
+# Скопируй этот файл как deploy.config и заполни своими данными.
+# deploy.config в .gitignore — не попадёт в репозиторий.
+
+# Хост FTP (обычно тот же, что и в твоём FTP-клиенте)
+FTP_HOST=ftp.libertad-theater.ru
+
+# Логин FTP
+FTP_USER=your_login
+
+# Пароль FTP
+FTP_PASS=your_password
+
+# Папка на сервере, куда грузим сайт. Зависит от Sweb.
+# Часто это /public_html  или  /www  или  /  (корень)
+FTP_REMOTE_DIR=/public_html
+
+# Протокол: ftp (обычный) или ftps (с шифрованием, если Sweb поддерживает)
+FTP_PROTOCOL=ftp
