@@ -1,0 +1,15 @@
+# LIBERTAD — Apache (Sweb). Sweb fronts Apache with nginx, so HTTPS is detected
+# via X-Forwarded-Proto / HTTPS headers as well as %{HTTPS} to avoid redirect loops.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# www -> без www (канонический домен: https://libertad-theater.ru)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# http -> https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https [NC]
+RewriteCond %{HTTP:HTTPS} !=on [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
