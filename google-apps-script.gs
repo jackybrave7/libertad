@@ -47,7 +47,7 @@ function isWaitlistRequest(data) {
   if (route === 'waitlist') return true;
   if (type === 'waitlist') return true;
   if (action.indexOf('waitlist') === 0) return true;
-  if (project === 'rusalochka' || project === 'stone-heart') return true;
+  if (project === 'rusalochka' || project === 'stone-heart' || project === 'kometa') return true;
   if (sheetName === 'Русалочка' || sheetName === 'Sheet1') return true;
   return false;
 }
@@ -63,6 +63,14 @@ function getWaitlistSheet(data) {
     sheet = ss.getSheetByName('Русалочка');
     if (!sheet) {
       throw new Error('Вкладка "Русалочка" не найдена');
+    }
+    return sheet;
+  }
+
+  if (action === 'waitlist_kometa' || project === 'kometa' || explicitName === 'Комета') {
+    sheet = ss.getSheetByName('Комета');
+    if (!sheet) {
+      sheet = ss.insertSheet('Комета');
     }
     return sheet;
   }
